@@ -845,7 +845,7 @@ const completedTasksCount = computed(() => doneTasks.value.length);
 const fetchTasks = async () => {
   try {
     const token = localStorage.getItem("LynxxSpace_token");
-    const res = await fetch("https://backendrepo-production-2f75.up.railway.app/api/tasks", {
+    const res = await fetch("https://backendspace.vercel.app/api/tasks", {
       headers: { Authorization: `Bearer ${token}` }
     });
     if (res.ok) tasks.value = await res.json();
@@ -855,7 +855,7 @@ const fetchTasks = async () => {
 const addTask = async () => {
   try {
     const token = localStorage.getItem("LynxxSpace_token");
-    const res = await fetch("https://backendrepo-production-2f75.up.railway.app/api/tasks", {
+    const res = await fetch("https://backendspace.vercel.app/api/tasks", {
       method: "POST",
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
       body: JSON.stringify(newTaskData.value)
@@ -873,7 +873,7 @@ const addTask = async () => {
 const moveTask = async (task, newStatus) => {
   try {
     const token = localStorage.getItem("LynxxSpace_token");
-    const res = await fetch(`https://backendrepo-production-2f75.up.railway.app/api/tasks/${task.id}`, {
+    const res = await fetch(`https://backendspace.vercel.app/api/tasks/${task.id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
       body: JSON.stringify({ status: newStatus })
@@ -889,7 +889,7 @@ const moveTask = async (task, newStatus) => {
 const deleteTask = async (taskId) => {
   try {
     const token = localStorage.getItem("LynxxSpace_token");
-    const res = await fetch(`https://backendrepo-production-2f75.up.railway.app/api/tasks/${taskId}`, {
+    const res = await fetch(`https://backendspace.vercel.app/api/tasks/${taskId}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` }
     });
@@ -907,7 +907,7 @@ const noteColors = ["pastel-blue", "pastel-pink", "pastel-purple", "pastel-green
 const fetchNotes = async () => {
   try {
     const token = localStorage.getItem("LynxxSpace_token");
-    const res = await fetch("https://backendrepo-production-2f75.up.railway.app/api/notes", {
+    const res = await fetch("https://backendspace.vercel.app/api/notes", {
       headers: { Authorization: `Bearer ${token}` }
     });
     if (res.ok) notes.value = await res.json();
@@ -917,7 +917,7 @@ const fetchNotes = async () => {
 const createNewNote = async () => {
   try {
     const token = localStorage.getItem("LynxxSpace_token");
-    const res = await fetch("https://backendrepo-production-2f75.up.railway.app/api/notes", {
+    const res = await fetch("https://backendspace.vercel.app/api/notes", {
       method: "POST",
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
       body: JSON.stringify({ title: "", content: "", color: noteColors[0] })
@@ -932,7 +932,7 @@ const createNewNote = async () => {
 const updateNote = async (note) => {
   try {
     const token = localStorage.getItem("LynxxSpace_token");
-    await fetch(`https://backendrepo-production-2f75.up.railway.app/api/notes/${note.id}`, {
+    await fetch(`https://backendspace.vercel.app/api/notes/${note.id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
       body: JSON.stringify({ title: note.title, content: note.content, color: note.color })
@@ -948,7 +948,7 @@ const updateNoteColor = async (note, color) => {
 const deleteNote = async (noteId) => {
   try {
     const token = localStorage.getItem("LynxxSpace_token");
-    const res = await fetch(`https://backendrepo-production-2f75.up.railway.app/api/notes/${noteId}`, {
+    const res = await fetch(`https://backendspace.vercel.app/api/notes/${noteId}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` }
     });
