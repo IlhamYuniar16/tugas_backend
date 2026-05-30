@@ -1,0 +1,40 @@
+@import 'tailwindcss';
+
+
+/* Tema Space (Default) */
+.theme-space {
+  --bg-page: #f9fafb;
+  --bg-card: #ffffff;
+  --border: #e5e7eb;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+}
+
+/* Tema Sunset */
+.theme-sunset {
+  --bg-page: #fff7ed;
+  --bg-card: #ffffff;
+  --border: #fed7aa;
+  --text-primary: #7c2d12;
+  --text-secondary: #9a3412;
+}
+
+/* Tema Emerald */
+.theme-emerald {
+  --bg-page: #ecfdf5;
+  --bg-card: #ffffff;
+  --border: #a7f3d0;
+  --text-primary: #064e3b;
+  --text-secondary: #047857;
+}
+
+/* Terapkan tema ke body */
+body.theme-space {
+  background-color: #f9fafb;
+}
+body.theme-sunset {
+  background-color: #fff7ed;
+}
+body.theme-emerald {
+  background-color: #ecfdf5;
+}
