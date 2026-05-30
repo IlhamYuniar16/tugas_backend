@@ -328,8 +328,8 @@ const handleSubmit = async () => {
   isLoading.value = true;
 
   const endpoint = isLoginMode.value
-    ? "http://localhost:5000/api/auth/login"
-    : "http://localhost:5000/api/auth/register";
+    ? "https://backendrepo-production-2f75.up.railway.app/api/auth/login"
+    : "https://backendrepo-production-2f75.up.railway.app/api/auth/register";
 
   const payload = isLoginMode.value
     ? { email: formData.email, password: formData.password }
